@@ -1,6 +1,6 @@
 
 
-function markup(images) {
+function imagesTemplate(images) {
     images.map((image) => {
         return `
     <li class="gallery-item">

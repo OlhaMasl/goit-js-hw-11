@@ -14,21 +14,17 @@ formEL.addEventListener("submit", evt => {
     const InputValue = evt.target.elements.search.value.trim();
 
     searchImage(InputValue).then(data => {
-    console.log(data.hits)
+        const markup = imagesTemplate(data.hits);
+        galleryList.innerHTML = markup;
+        const galleryModel = new SimpleLightbox('.gallery a', {
+            captionsData: "alt",
+            captionPosition: "bottom",
+            captionDelay: 250,
+        });
+        galleryModel.on('show.simplelightbox', function () {
+            // do something…
+        }); 
     })
     
-    galleryList.innerHTML = markup;
-console.log(galleryList);
-
-const galleryModel = new SimpleLightbox('.gallery a', { 
-  captionsData: "alt",
-  captionPosition: "bottom",
-  captionDelay: 250,
-});
-
-galleryModel.on('show.simplelightbox', function () {
-	// do something…
-});
-
 });
 

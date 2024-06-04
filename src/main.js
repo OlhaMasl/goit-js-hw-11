@@ -1,5 +1,5 @@
-import "./js/pixabay-api";
-import "./js/render-functions";
+import { searchImage } from "./js/pixabay-api";
+import { imagesTemplate } from "./js/render-functions";
 
 // Описаний у документації
 import SimpleLightbox from "simplelightbox";
@@ -14,9 +14,10 @@ formEL.addEventListener("submit", evt => {
     const InputValue = evt.target.elements.search.value.trim();
 
     searchImage(InputValue).then(data => {
+        console.log(data.hits);
         const markup = imagesTemplate(data.hits);
         galleryList.innerHTML = markup;
-        const galleryModel = new SimpleLightbox('.gallery a', {
+        const galleryModel = new SimpleLightbox('.gallary a', {
             captionsData: "alt",
             captionPosition: "bottom",
             captionDelay: 250,
@@ -28,3 +29,4 @@ formEL.addEventListener("submit", evt => {
     
 });
 
+     

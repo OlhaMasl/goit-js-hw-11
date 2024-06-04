@@ -1,5 +1,5 @@
 
- function searchImage(query) {
+ export function searchImage(query) {
     const BASE_URL = "https://pixabay.com/api/";
     const params = new URLSearchParams({
         key: "44175517-753270956c641713e32eb091d",

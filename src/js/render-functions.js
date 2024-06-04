@@ -1,9 +1,8 @@
 
 
-function imagesTemplate(images) {
-    images.map((image) => {
-        return `
-    <li class="gallery-item">
+export function imagesTemplate(images) {
+   return images.map((image) => {
+       return `<li class="gallery-item">
   <a class="gallery-link" href="${image.largeImageURL}">
     <img
       class="gallery-image"
@@ -17,7 +16,7 @@ function imagesTemplate(images) {
     <li class="info-item"><div class="item-text">Downloads</div><div class="item-value">${image.downloads}</div></li>
     </ul>
   </a>
-</li>`;
+</li>`
     }).join("");
 }
 

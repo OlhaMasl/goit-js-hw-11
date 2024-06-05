@@ -53,6 +53,38 @@ padding-left: 8px;
   pointer-events: none;
 }
 
+/*------------------Loader------------------*/
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px dotted #3208ee;
+  border-radius: 50%;
+  display: inline-block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+
+.is-hiding {
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* --------------Image-Style----------------*/
 
 .gallary {

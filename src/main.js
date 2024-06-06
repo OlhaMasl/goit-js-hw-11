@@ -16,6 +16,12 @@ const formEL = document.querySelector(".form");
 const galleryList = document.querySelector(".gallery");
 const loaderEl = document.querySelector(".loader");
 
+const galleryModel = new SimpleLightbox('.gallery a', {
+    captionsData: "alt",
+    captionPosition: "bottom",
+    captionDelay: 250,
+});
+
 formEL.addEventListener("submit", evt => {
     evt.preventDefault();
     const InputValue = evt.target.elements.search.value.trim();
@@ -36,16 +42,7 @@ formEL.addEventListener("submit", evt => {
         }
         const markup = imagesTemplate(data.hits);
         galleryList.innerHTML = markup;
-
-        const galleryModel = new SimpleLightbox('.gallery a', {
-            captionsData: "alt",
-            captionPosition: "bottom",
-            captionDelay: 250,
-        });
-        galleryModel.on('show.simplelightbox', function () {
-    
-        });
-         
+        galleryModel.refresh();
     }).catch(error => {
         // console.log(error);
         iziToast.show({

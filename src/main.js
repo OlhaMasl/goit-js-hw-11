@@ -13,7 +13,7 @@ import "izitoast/dist/css/iziToast.min.css";
 
 
 const formEL = document.querySelector(".form");
-const galleryList = document.querySelector(".gallary");
+const galleryList = document.querySelector(".gallery");
 const loaderEl = document.querySelector(".loader");
 
 formEL.addEventListener("submit", evt => {
@@ -36,14 +36,16 @@ formEL.addEventListener("submit", evt => {
         }
         const markup = imagesTemplate(data.hits);
         galleryList.innerHTML = markup;
-        const galleryModel = new SimpleLightbox('.gallary a', {
+
+        const galleryModel = new SimpleLightbox('.gallery a', {
             captionsData: "alt",
             captionPosition: "bottom",
             captionDelay: 250,
         });
         galleryModel.on('show.simplelightbox', function () {
-            refresh();
-        }); 
+    
+        });
+         
     }).catch(error => {
         // console.log(error);
         iziToast.show({
@@ -58,5 +60,7 @@ formEL.addEventListener("submit", evt => {
             });
    
 });
+
+
 
      

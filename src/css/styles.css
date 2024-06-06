@@ -87,7 +87,7 @@ padding-left: 8px;
 
 /* --------------Image-Style----------------*/
 
-.gallary {
+.gallery {
 display: flex;
 flex-wrap: wrap;
 gap: 48px 24px;
